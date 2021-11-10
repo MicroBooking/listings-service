@@ -9,6 +9,8 @@ public class Listing {
     private String type;
     private Integer monthlyPrice;
     private Instant created;
+    private boolean reserved;
+    private Integer ownerId;
 
     public Integer getListingId() {
         return listingId;
@@ -56,5 +58,21 @@ public class Listing {
 
     public void setCreated(Instant created) {
         this.created = created;
+    }
+
+    public Integer getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }

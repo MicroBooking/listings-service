@@ -12,6 +12,8 @@ public class ListingConverter {
         dto.setType(entity.getType());
         dto.setMonthlyPrice(entity.getMonthlyPrice());
         dto.setCreated(entity.getCreated());
+        dto.setOwnerId(entity.getOwnerId());
+        dto.setReserved(entity.isReserved());
 
         return dto;
     }
@@ -23,9 +25,9 @@ public class ListingConverter {
         entity.setType(dto.getType());
         entity.setMonthlyPrice(dto.getMonthlyPrice());
         entity.setCreated(dto.getCreated());
+        entity.setOwnerId(dto.getOwnerId());
+        entity.setReserved(dto.isReserved());
 
         return entity;
     }
-
-
 }

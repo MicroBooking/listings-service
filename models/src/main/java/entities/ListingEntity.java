@@ -29,6 +29,12 @@ public class ListingEntity {
     @Column(name = "created")
     private Instant created;
 
+    @Column(name="owner_id")
+    private Integer ownerId;
+
+    @Column(name = "reserved")
+    private boolean reserved;
+
 
     public Integer getId() {
         return id;
@@ -76,5 +82,21 @@ public class ListingEntity {
 
     public void setCreated(Instant created) {
         this.created = created;
+    }
+
+    public Integer getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    public boolean isReserved() {
+        return reserved;
+    }
+
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;
     }
 }

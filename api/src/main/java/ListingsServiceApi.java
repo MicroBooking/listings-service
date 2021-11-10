@@ -28,7 +28,7 @@ public class ListingsServiceApi {
     @POST
     public Response createListing(Listing listing) {
         if(listing.getTitle() == null || listing.getDescription() == null || listing.getType() == null ||
-                listing.getMonthlyPrice() == null) {
+                listing.getMonthlyPrice() == null || listing.getOwnerId() == null) {
             return Response.status(Response.Status.BAD_REQUEST).build();
         } else {
             listing = listingsBean.createListing(listing);
