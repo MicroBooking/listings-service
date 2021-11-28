@@ -2,7 +2,6 @@ import beans.ListingsBean;
 import classes.Listing;
 
 import javax.inject.Inject;
-import javax.persistence.Column;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -34,6 +33,14 @@ public class ListingsServiceApi {
             listing = listingsBean.createListing(listing);
         }
 
-        return Response.status(Response.Status.CONFLICT).entity(listing).build();
+        return Response.status(Response.Status.OK).entity(listing).build();
+    }
+
+    @POST
+    @Path("reserveListing/{listingId}")
+    public Response reserveListing(@PathParam("listingId") Integer listingId) {
+        Listing listing = listingsBean.reserveListing(listingId);
+
+        return Response.status(Response.Status.OK).entity(listing).build();
     }
 }

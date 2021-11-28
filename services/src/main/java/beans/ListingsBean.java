@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
@@ -32,16 +33,28 @@ public class ListingsBean {
    public Listing createListing(Listing listing) {
         ListingEntity listingEntity = ListingConverter.toEntity(listing);
 
-        try {
-            beginTx();
-            em.persist(listingEntity);
-            commitTx();
-        }
-        catch (Exception e){
-            rollbackTx();
-        }
+       try {
+           beginTx();
+           em.persist(listingEntity);
+           commitTx();
+       }
+       catch (Exception e) {
+           rollbackTx();
+       }
+
+       if (listingEntity.getId() == null) {
+           throw new RuntimeException("Entity was not persisted");
+       }
+
 
         return ListingConverter.toDto(listingEntity);
+   }
+
+   public Listing reserveListing(Integer listingId) {
+            ListingEntity listingEntity = em.find(ListingEntity.class, listingId);
+            listingEntity.setReserved(true);
+            em.merge(listingEntity);
+            return ListingConverter.toDto(listingEntity);
    }
 
     private void beginTx() {

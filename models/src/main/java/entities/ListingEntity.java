@@ -7,7 +7,9 @@ import java.time.Instant;
 @Table(name="listing")
 @NamedQueries(value = {
         @NamedQuery(name="ListingEntity.getAll",
-                query="SELECT listing FROM ListingEntity listing")
+                query="SELECT listing FROM ListingEntity listing"),
+        @NamedQuery(name="ListingEntity.getById",
+                query="SELECT listing FROM ListingEntity listing where listing.id=:id")
 })
 public class ListingEntity {
     @Id
