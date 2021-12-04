@@ -35,3 +35,19 @@ jobs:
       - name: Push Docker images
         run: |
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/listings-service --all-tags
+      - name: Push Docker images
+        run: |
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/listings-service --all-tags
+
+      - name: Configure Kubernetes context
+        uses: Azure/k8s-set-context@v1
+        with:
+          method: kubeconfig
+          kubeconfig: ${{ secrets.KUBE_CONFIG }}
+
+      - name: Update deployment image
+        run: |
+          kubectl set image deployments/listings-service listings-service=${{ secrets.DOCKERHUB_USERNAME }}/listings-service:${{ steps.vars.outputs.sha_short }}
+
+
+
