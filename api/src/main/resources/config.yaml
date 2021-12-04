@@ -12,6 +12,8 @@ kumuluzee:
       connection-url: ${PG_HOST}
       username: ${PG_USER}
       password: ${PG_PASSWORD}
+      pool:
+        max-size: 1
   config:
     consul:
       agent: ${CONSUL_HOST}
