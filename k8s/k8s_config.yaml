@@ -36,6 +36,11 @@ spec:
                 secretKeyRef:
                   key: pg_password
                   name: booking-secret
+            - name: CONSUL_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: consul_host
+                  name: booking-secret
 ---
 
 apiVersion: v1

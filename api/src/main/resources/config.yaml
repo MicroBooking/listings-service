@@ -14,4 +14,4 @@ kumuluzee:
       password: ${PG_PASSWORD}
   config:
     consul:
-      agent: http://consul:8500
+      agent: ${CONSUL_HOST}
