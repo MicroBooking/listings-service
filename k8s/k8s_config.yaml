@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: listings-service
+  labels:
+    component: listings-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: listings-service
+  template:
+    metadata:
+      labels:
+        component: listings-service
+    spec:
+      containers:
+        - name: listings-service
+          image: bogdanp3trovic/listings-service
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          env:
+            - name: PG_HOST
+              valueFrom:
+                secretKeyRef:
+                  key: pg_host
+                  name: booking-secret
+            - name: PG_USER
+              valueFrom:
+                secretKeyRef:
+                  key: pg_user
+                  name: booking-secret
+            - name: PG_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  key: pg_password
+                  name: booking-secret
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: listings-service
+spec:
+  ports:
+    - port: 80
+      targetPort: 8080
+      protocol: TCP
+  selector:
+    name: listings-service
+  type: ClusterIP
+
+
