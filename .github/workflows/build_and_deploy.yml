@@ -29,10 +29,9 @@ jobs:
 
       - name: Build the image
         run: |
-          docker build -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:${{ steps.vars.outputs.sha_short }} .
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:${{ steps.vars.outputs.sha_short }} latest
+          docker build -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:${{ steps.vars.outputs.sha_short }} \
+          -t ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:latest .
 
       - name: Push Docker images
         run: |
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:${{ steps.vars.outputs.sha_short }}
-          docker push ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:latest
+          docker push ${{ secrets.DOCKERHUB_USERNAME }}/listings-service --all-tags
