@@ -30,7 +30,7 @@ jobs:
       - name: Build the image
         run: |
           docker build -f Dockerfile -t ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:${{ steps.vars.outputs.sha_short }} .
-          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/listings-service latest
+          docker tag ${{ secrets.DOCKERHUB_USERNAME }}/listings-service:${{ steps.vars.outputs.sha_short }} latest
 
       - name: Push Docker images
         run: |
