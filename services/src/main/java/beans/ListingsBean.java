@@ -53,8 +53,16 @@ public class ListingsBean {
    public Listing reserveListing(Integer listingId) {
             ListingEntity listingEntity = em.find(ListingEntity.class, listingId);
             listingEntity.setReserved(true);
-            em.merge(listingEntity);
-            return ListingConverter.toDto(listingEntity);
+           try {
+               beginTx();
+               em.merge(listingEntity);
+               commitTx();
+           }
+           catch (Exception e) {
+               rollbackTx();
+           }
+
+           return ListingConverter.toDto(listingEntity);
    }
 
     private void beginTx() {
