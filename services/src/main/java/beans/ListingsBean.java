@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
+import javax.ws.rs.NotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -29,6 +30,18 @@ public class ListingsBean {
 
         return resultList.stream().map(ListingConverter::toDto).collect(Collectors.toList());
    }
+
+    public Listing getListingById(Integer id) {
+        ListingEntity listingEntity = em.find(ListingEntity.class, id);
+
+        if (listingEntity == null) {
+            throw new NotFoundException();
+        }
+
+        Listing listing = ListingConverter.toDto(listingEntity);
+
+        return listing;
+    }
 
    public Listing createListing(Listing listing) {
         ListingEntity listingEntity = ListingConverter.toEntity(listing);

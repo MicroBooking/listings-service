@@ -23,6 +23,13 @@ public class ListingsServiceApi {
         return Response.status(Response.Status.OK).entity(listing).build();
     }
 
+    @GET
+    @Path("/{listingId}")
+    public Response getListingById(@PathParam("listingId") Integer listingId) {
+        Listing listing = listingsBean.getListingById(listingId);
+        return Response.status(Response.Status.OK).entity(listing).build();
+    }
+
 
     @POST
     public Response createListing(Listing listing) {
