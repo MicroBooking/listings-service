@@ -34,7 +34,9 @@ public class LogContextInterceptor {
 
         settings.put("uniqueRequestId", UUID.randomUUID().toString());
 
-        CloseableThreadContext.putAll(settings);
-        context.proceed();
+        
+        CloseableThreadContext.Instance ctc = CloseableThreadContext.putAll(settings);
+        Object result = context.proceed();
+        return result;
     }
 }
