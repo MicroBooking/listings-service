@@ -1,5 +1,6 @@
 import beans.ListingsBean;
 import classes.Listing;
+import com.kumuluz.ee.logs.cdi.Log;
 
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -11,6 +12,7 @@ import java.util.logging.Logger;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Path("listings")
+@Log
 public class ListingsServiceApi {
     private Logger log = Logger.getLogger(ListingsServiceApi.class.getName());
 
