@@ -54,6 +54,7 @@ public class ListingsServiceApi {
     public Response reserveListing(@PathParam("listingId") Integer listingId, Integer reservationId) {
         Listing listing = listingsBean.reserveListing(listingId, reservationId);
 
+        log.info("Got new reservation!");
         return Response.status(Response.Status.OK).entity(listing).build();
     }
 }
