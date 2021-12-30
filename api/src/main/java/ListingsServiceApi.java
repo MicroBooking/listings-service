@@ -1,10 +1,5 @@
 import beans.ListingsBean;
 import classes.Listing;
-import com.kumuluz.ee.logs.cdi.Log;
-import com.kumuluz.ee.logs.cdi.LogParams;
-
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
