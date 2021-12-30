@@ -3,6 +3,7 @@ import classes.Listing;
 import com.kumuluz.ee.logs.cdi.Log;
 
 import javax.annotation.PostConstruct;
+import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -11,6 +12,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 @Log
+@ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Path("listings")
