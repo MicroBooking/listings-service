@@ -10,7 +10,7 @@ import java.util.logging.Logger;
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 @Path("listings")
-public class ListingsServiceApi {
+public class ListingsServiceResource {
     private Logger log = Logger.getLogger("ListingsServiceApi");
 
     @Inject
