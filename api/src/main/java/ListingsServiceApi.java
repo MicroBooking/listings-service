@@ -1,6 +1,7 @@
 import beans.ListingsBean;
 import classes.Listing;
 import com.kumuluz.ee.logs.cdi.Log;
+import com.kumuluz.ee.logs.cdi.LogParams;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
@@ -11,7 +12,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.logging.Logger;
 
-@Log
+@Log(value = LogParams.METRICS, methodCall = false)
 @ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
