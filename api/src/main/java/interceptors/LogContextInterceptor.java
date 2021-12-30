@@ -24,8 +24,6 @@ public class LogContextInterceptor {
     public Object logMethodEntryAndExit(InvocationContext context) throws Exception {
 
         HashMap settings = new HashMap();
-        settings.put("environmentType", EeConfig.getInstance().getEnv().getName());
-        settings.put("applicationName", EeConfig.getInstance().getName());
         settings.put("applicationVersion", EeConfig.getInstance().getVersion());
         settings.put("uniqueInstanceId", EeRuntime.getInstance().getInstanceId());
 
