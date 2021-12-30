@@ -17,13 +17,11 @@ import java.util.UUID;
 @Interceptor
 @Priority(Interceptor.Priority.PLATFORM_BEFORE)
 public class LogContextInterceptor {
+
     @AroundInvoke
     public Object logMethodEntryAndExit(InvocationContext context) throws Exception {
-        ConfigurationUtil configurationUtil = ConfigurationUtil.getInstance();
-
 
         HashMap settings = new HashMap();
-
         settings.put("environmentType", EeConfig.getInstance().getEnv().getName());
         settings.put("applicationName", EeConfig.getInstance().getName());
         settings.put("applicationVersion", EeConfig.getInstance().getVersion());
