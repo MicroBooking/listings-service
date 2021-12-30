@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 @Produces(MediaType.APPLICATION_JSON)
 @Path("listings")
 public class ListingsServiceApi {
-    private Logger log = Logger.getLogger(ListingsServiceApi.class.getName());
+    private Logger log = Logger.getLogger("ListingsServiceApi");
 
     @Inject
     private ListingsBean listingsBean;
@@ -54,7 +54,7 @@ public class ListingsServiceApi {
     @Path("reserveListing/{listingId}")
     public Response reserveListing(@PathParam("listingId") Integer listingId, Integer reservationId) {
         Listing listing = listingsBean.reserveListing(listingId, reservationId);
-        
+
         return Response.status(Response.Status.OK).entity(listing).build();
     }
 }
