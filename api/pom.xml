@@ -23,6 +23,10 @@
             <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
+            <artifactId>kumuluzee-logs-log4j2</artifactId>
+            <groupId>com.kumuluz.ee.logs</groupId>
+        </dependency>
+        <dependency>
             <artifactId>kumuluzee-config-consul</artifactId>
             <groupId>com.kumuluz.ee.config</groupId>
         </dependency>
