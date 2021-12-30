@@ -45,8 +45,8 @@ public class ListingsServiceApi {
 
     @POST
     @Path("reserveListing/{listingId}")
-    public Response reserveListing(@PathParam("listingId") Integer listingId) {
-        Listing listing = listingsBean.reserveListing(listingId);
+    public Response reserveListing(@PathParam("listingId") Integer listingId, Integer reservationId) {
+        Listing listing = listingsBean.reserveListing(listingId, reservationId);
 
         return Response.status(Response.Status.OK).entity(listing).build();
     }

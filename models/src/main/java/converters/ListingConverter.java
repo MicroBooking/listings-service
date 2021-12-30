@@ -14,6 +14,7 @@ public class ListingConverter {
         dto.setCreated(entity.getCreated());
         dto.setOwnerId(entity.getOwnerId());
         dto.setReserved(entity.isReserved());
+        dto.setReservationId(entity.getReservationId());
 
         return dto;
     }
@@ -27,6 +28,7 @@ public class ListingConverter {
         entity.setCreated(dto.getCreated());
         entity.setOwnerId(dto.getOwnerId());
         entity.setReserved(dto.isReserved());
+        entity.setReservationId(dto.getReservationId());
 
         return entity;
     }

@@ -37,6 +37,9 @@ public class ListingEntity {
     @Column(name = "reserved")
     private boolean reserved;
 
+    @Column(name = "reservation_id")
+    private Integer reservationId;
+
 
     public Integer getId() {
         return id;
@@ -100,5 +103,13 @@ public class ListingEntity {
 
     public void setReserved(boolean reserved) {
         this.reserved = reserved;
+    }
+
+    public Integer getReservationId() {
+        return reservationId;
+    }
+
+    public void setReservationId(Integer reservationId) {
+        this.reservationId = reservationId;
     }
 }

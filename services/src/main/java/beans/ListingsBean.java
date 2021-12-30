@@ -63,9 +63,10 @@ public class ListingsBean {
         return ListingConverter.toDto(listingEntity);
    }
 
-   public Listing reserveListing(Integer listingId) {
+   public Listing reserveListing(Integer listingId, Integer reservationId) {
             ListingEntity listingEntity = em.find(ListingEntity.class, listingId);
             listingEntity.setReserved(true);
+            listingEntity.setReservationId(reservationId);
            try {
                beginTx();
                em.merge(listingEntity);

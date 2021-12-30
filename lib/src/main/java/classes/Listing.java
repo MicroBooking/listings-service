@@ -11,6 +11,7 @@ public class Listing {
     private Instant created;
     private boolean reserved;
     private Integer ownerId;
+    private Integer reservationId;
 
     public Integer getListingId() {
         return listingId;
@@ -74,5 +75,13 @@ public class Listing {
 
     public void setReserved(boolean reserved) {
         this.reserved = reserved;
+    }
+
+    public Integer getReservationId() {
+        return reservationId;
+    }
+
+    public void setReservationId(Integer reservationId) {
+        this.reservationId = reservationId;
     }
 }
