@@ -10,6 +10,8 @@ import javax.annotation.Priority;
 import javax.interceptor.AroundInvoke;
 import javax.interceptor.Interceptor;
 import javax.interceptor.InvocationContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.ws.rs.core.Context;
 import java.util.HashMap;
 import java.util.UUID;
 
@@ -17,6 +19,9 @@ import java.util.UUID;
 @Interceptor
 @Priority(Interceptor.Priority.PLATFORM_BEFORE)
 public class LogContextInterceptor {
+
+    @Context
+    private HttpServletRequest requestContext;
 
     @AroundInvoke
     public Object logMethodEntryAndExit(InvocationContext context) throws Exception {
@@ -29,9 +34,7 @@ public class LogContextInterceptor {
 
         settings.put("uniqueRequestId", UUID.randomUUID().toString());
 
-        try (final CloseableThreadContext.Instance ctc = CloseableThreadContext.putAll(settings)) {
-            Object result = context.proceed();
-            return result;
-        }
+        CloseableThreadContext.putAll(settings))
+        context.proceed();
     }
 }
