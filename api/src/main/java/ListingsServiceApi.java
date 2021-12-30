@@ -12,6 +12,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 import java.util.logging.Logger;
 
+@Log
 @ApplicationScoped
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
@@ -53,8 +54,7 @@ public class ListingsServiceApi {
     @Path("reserveListing/{listingId}")
     public Response reserveListing(@PathParam("listingId") Integer listingId, Integer reservationId) {
         Listing listing = listingsBean.reserveListing(listingId, reservationId);
-
-        log.info("Got new reservation!");
+        
         return Response.status(Response.Status.OK).entity(listing).build();
     }
 }
