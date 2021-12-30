@@ -13,7 +13,7 @@ kumuluzee:
       username: ${PG_USER}
       password: ${PG_PASSWORD}
       pool:
-        max-size: 1
+        max-size: 5
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">
