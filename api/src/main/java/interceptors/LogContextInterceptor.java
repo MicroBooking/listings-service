@@ -25,7 +25,7 @@ public class LogContextInterceptor {
 
     @AroundInvoke
     public Object logMethodEntryAndExit(InvocationContext context) throws Exception {
-
+        context.proceed();
         HashMap settings = new HashMap();
         settings.put("environmentType", EeConfig.getInstance().getEnv().getName());
         settings.put("applicationName", EeConfig.getInstance().getName());
@@ -34,7 +34,7 @@ public class LogContextInterceptor {
 
         settings.put("uniqueRequestId", UUID.randomUUID().toString());
 
-        
+
         CloseableThreadContext.Instance ctc = CloseableThreadContext.putAll(settings);
         Object result = context.proceed();
         return result;
