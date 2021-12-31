@@ -4,7 +4,7 @@ kumuluzee:
     name: dev
   version: 1.0.0
   server:
-    base-url: http://localhost:8080
+    base-url: http://206.189.249.190/listings-service/
     http:
       port: 8080
   datasources:
@@ -14,8 +14,6 @@ kumuluzee:
       password: ${PG_PASSWORD}
       pool:
         max-size: 5
-  openapi:
-    enabled: true
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">
