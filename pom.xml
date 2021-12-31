@@ -29,6 +29,7 @@
         <postgresql.version>42.3.0</postgresql.version>
         <kumuluzee-logs.version>1.4.5</kumuluzee-logs.version>
         <kumuluzee-fault-tolerance.version>2.1.1</kumuluzee-fault-tolerance.version>
+        <kumuluzee-openapi-mp.version>1.4.0</kumuluzee-openapi-mp.version>
 
     </properties>
 
@@ -85,6 +86,16 @@
                 <artifactId>kumuluzee-logs-log4j2</artifactId>
                 <groupId>com.kumuluz.ee.logs</groupId>
                 <version>${kumuluzee-logs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.openapi</groupId>
+                <artifactId>kumuluzee-openapi-mp</artifactId>
+                <version>${kumuluzee-openapi-mp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.openapi</groupId>
+                <artifactId>kumuluzee-openapi-mp-ui</artifactId>
+                <version>${kumuluzee-openapi-mp.version}</version>
             </dependency>
             <dependency>
                 <groupId>si.fri.rso.listings</groupId>
