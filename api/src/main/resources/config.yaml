@@ -14,6 +14,9 @@ kumuluzee:
       password: ${PG_PASSWORD}
       pool:
         max-size: 5
+  openapi-mp:
+    ui:
+      mapping: /listings-service/api-specs/ui
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">
@@ -37,3 +40,4 @@ kumuluzee:
   config:
     consul:
       agent: ${CONSUL_HOST}
+# OPENAPI url http://206.189.249.190/listings-service/api-specs/ui/?url=http://206.189.249.190/listings-service/openapi&oauth2RedirectUrl=http://206.189.249.190/listings-service/api-specs/ui/oauth2-redirect.html#/
