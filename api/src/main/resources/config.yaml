@@ -16,7 +16,9 @@ kumuluzee:
         max-size: 5
   openapi-mp:
     ui:
-      specification-server: http://206.189.249.190/listings-service/api-specs
+      specification-server: http://206.189.249.190/listings-service/
+
+
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">
