@@ -83,7 +83,7 @@ public class ListingsBean {
    }
 
    @CircuitBreaker(requestVolumeThreshold = 1, delay=15000, failureRatio = 0.2)
-   @Fallback(fallbackMethod = "listingsFallback")
+   @Fallback(fallbackMethod = "listingFallback")
    public Listing listingForTolerance(Integer listingId) throws Exception {
         int i = (int)(Math.random() * 5) % 5;
         if (i == 0 || i == 1) {
