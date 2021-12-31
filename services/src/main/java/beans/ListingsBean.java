@@ -3,6 +3,8 @@ package beans;
 import classes.Listing;
 import converters.ListingConverter;
 import entities.ListingEntity;
+import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
+import org.eclipse.microprofile.faulttolerance.Fallback;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -11,6 +13,7 @@ import javax.persistence.TypedQuery;
 import javax.ws.rs.NotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
@@ -77,6 +80,22 @@ public class ListingsBean {
            }
 
            return ListingConverter.toDto(listingEntity);
+   }
+
+   @CircuitBreaker(requestVolumeThreshold = 1, delay=15000, failureRatio = 0.2)
+   @Fallback(fallbackMethod = "listingsFallback")
+   public Listing listingForTolerance(Integer listingId) throws Exception {
+        int i = (int)(Math.random() * 5) % 5;
+        if (i == 0 || i == 1) {
+            throw new Exception("Errored");
+        }
+        return getListingById(listingId);
+   }
+
+   public Listing listingFallback(Integer listingId) {
+        Listing deflisting = new Listing();
+        deflisting.setTitle("Default fallback title");
+        return deflisting;
    }
 
     private void beginTx() {

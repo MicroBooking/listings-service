@@ -53,4 +53,15 @@ public class ListingsServiceApi {
 
         return Response.status(Response.Status.OK).entity(listing).build();
     }
+
+    @Path("circuitBreaker/{listingId}")
+    @GET
+    public Response testCircuitBreaker(@PathParam("listingId") Integer listingId) {
+        try {
+            Listing listing = listingsBean.listingForTolerance(listingId);
+            return Response.status(Response.Status.OK).entity(listing).build();
+        } catch (Exception e) {
+            return Response.status(Response.Status.BAD_REQUEST).build();
+        }
+    }
 }
