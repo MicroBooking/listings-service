@@ -14,6 +14,8 @@ kumuluzee:
       password: ${PG_PASSWORD}
       pool:
         max-size: 5
+  openapi:
+    enabled: true
   openapi-mp:
     ui:
       server-auto-config:
