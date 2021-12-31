@@ -31,6 +31,7 @@
         <kumuluzee-fault-tolerance.version>2.1.1</kumuluzee-fault-tolerance.version>
         <kumuluzee-openapi-mp.version>1.4.0</kumuluzee-openapi-mp.version>
         <kumuluzee.server.base-url>http://206.189.249.190/listings-service/</kumuluzee.server.base-url>
+        <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
 
     </properties>
 
@@ -82,6 +83,11 @@
                 <groupId>com.kumuluz.ee.config</groupId>
                 <artifactId>kumuluzee-config-mp</artifactId>
                 <version>${kumuluzee-config-mp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.cors</groupId>
+                <artifactId>kumuluzee-cors</artifactId>
+                <version>${kumuluzee-cors.version}</version>
             </dependency>
             <dependency>
                 <artifactId>kumuluzee-logs-log4j2</artifactId>
