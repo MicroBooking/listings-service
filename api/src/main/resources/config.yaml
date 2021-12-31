@@ -14,9 +14,6 @@ kumuluzee:
       password: ${PG_PASSWORD}
       pool:
         max-size: 5
-  openapi-mp:
-    ui:
-      mapping: /listings-service/api-specs/ui
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">
