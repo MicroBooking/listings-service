@@ -16,11 +16,6 @@ kumuluzee:
         max-size: 5
   openapi:
     enabled: true
-  openapi-mp:
-    ui:
-      server-auto-config:
-        enabled: true
-        original-uri-check: true
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">

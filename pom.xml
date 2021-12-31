@@ -30,6 +30,7 @@
         <kumuluzee-logs.version>1.4.5</kumuluzee-logs.version>
         <kumuluzee-fault-tolerance.version>2.1.1</kumuluzee-fault-tolerance.version>
         <kumuluzee-openapi-mp.version>1.4.0</kumuluzee-openapi-mp.version>
+        <kumuluzee.server.base-url>http://206.189.249.190/listings-service/</kumuluzee.server.base-url>
 
     </properties>
 
@@ -96,11 +97,6 @@
                 <groupId>com.kumuluz.ee.openapi</groupId>
                 <artifactId>kumuluzee-openapi-mp-ui</artifactId>
                 <version>${kumuluzee-openapi-mp.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.kumuluz.ee.openapi</groupId>
-                <artifactId>kumuluzee-openapi-ui</artifactId>
-                <version>1.0.1</version>
             </dependency>
             <dependency>
                 <groupId>si.fri.rso.listings</groupId>
