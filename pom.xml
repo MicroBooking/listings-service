@@ -32,6 +32,7 @@
         <kumuluzee-openapi-mp.version>1.4.0</kumuluzee-openapi-mp.version>
         <kumuluzee.server.base-url>http://206.189.249.190/listings-service/</kumuluzee.server.base-url>
         <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
+        <kumuluzee-discovery.version>1.1.1</kumuluzee-discovery.version>
 
     </properties>
 
@@ -93,6 +94,11 @@
                 <artifactId>kumuluzee-logs-log4j2</artifactId>
                 <groupId>com.kumuluz.ee.logs</groupId>
                 <version>${kumuluzee-logs.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.kumuluz.ee.discovery</groupId>
+                <artifactId>kumuluzee-discovery-consul</artifactId>
+                <version>${kumuluzee-discovery.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.kumuluz.ee.openapi</groupId>

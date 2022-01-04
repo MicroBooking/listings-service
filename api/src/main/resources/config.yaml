@@ -21,7 +21,9 @@ kumuluzee:
     ui:
       specification-server: http://206.189.249.190/listings-service/
 
-
+  discovery:
+    consul:
+      agent: http://10.244.1.32:8500
   logs:
     config-file: '<?xml version="1.0" encoding="UTF-8"?>
                           <Configuration name="comments">
