@@ -3,8 +3,10 @@ kumuluzee:
   env:
     name: dev
   version: 1.0.0
+  address: 10.245.107.190
   server:
     base-url: http://10.245.107.190
+    address: 10.245.107.190
     http:
       port: 8080
   datasources:
@@ -20,6 +22,10 @@ kumuluzee:
   openapi-mp:
     ui:
       specification-server: http://206.189.249.190/listings-service/
+
+  openapi:
+    servlet:
+      mapping: /v1/reservations/openapi-specs
 
   discovery:
     cluster: rso-cluster
