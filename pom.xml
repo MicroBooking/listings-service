@@ -91,7 +91,7 @@
                 <version>${kumuluzee-cors.version}</version>
             </dependency>
             <dependency>
-                <artifactId>kumuluzee-logs-fluentd</artifactId>
+                <artifactId>kumuluzee-logs-log4j2</artifactId>
                 <groupId>com.kumuluz.ee.logs</groupId>
                 <version>${kumuluzee-logs.version}</version>
             </dependency>
@@ -113,7 +113,7 @@
             <dependency>
                 <groupId>com.kumuluz.ee</groupId>
                 <artifactId>kumuluzee-cdi-weld</artifactId>
-                <version>3.0.0</version>
+                <version>3.12.2</version>
             </dependency>
             <dependency>
                 <groupId>si.fri.rso.listings</groupId>
