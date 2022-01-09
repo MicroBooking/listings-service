@@ -91,7 +91,7 @@
                 <version>${kumuluzee-cors.version}</version>
             </dependency>
             <dependency>
-                <artifactId>kumuluzee-logs-log4j2</artifactId>
+                <artifactId>kumuluzee-logs-fluentd</artifactId>
                 <groupId>com.kumuluz.ee.logs</groupId>
                 <version>${kumuluzee-logs.version}</version>
             </dependency>
