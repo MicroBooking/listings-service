@@ -22,9 +22,6 @@ kumuluzee:
   openapi-mp:
     ui:
       specification-server: http://206.189.249.190/listings-service/
-  openapi:
-    servlet:
-      mapping: openapi/reservations
 
   discovery:
     cluster: rso-cluster
