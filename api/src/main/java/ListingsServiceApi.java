@@ -11,6 +11,7 @@ import org.eclipse.microprofile.openapi.annotations.info.License;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
+import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.eclipse.microprofile.openapi.annotations.servers.Server;
@@ -67,7 +68,7 @@ public class ListingsServiceApi {
             @APIResponse(responseCode = "400", description = "Validation error. Check request parameters")
     })
     @POST
-    public Response createListing(@Parameter(description="DTO object to represent Listing", required = true, content = @Content(schema = @Schema(implementation = Listing.class)))
+    public Response createListing(@RequestBody(description="DTO object to represent Listing", required = true, content = @Content(schema = @Schema(implementation = Listing.class)))
                                               Listing listing) {
         if(listing.getTitle() == null || listing.getDescription() == null || listing.getType() == null ||
                 listing.getMonthlyPrice() == null || listing.getOwnerId() == null) {
