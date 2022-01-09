@@ -25,7 +25,7 @@ kumuluzee:
 
   openapi:
     servlet:
-      mapping: /v1/reservations/openapi-specs
+      mapping: /v1/listings/openapi-specs
 
   discovery:
     cluster: rso-cluster
