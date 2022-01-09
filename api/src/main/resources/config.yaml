@@ -48,6 +48,7 @@ kumuluzee:
                               </Loggers>
                           </Configuration>'
   config:
+    cluster: rso-cluster
     consul:
       agent: ${CONSUL_HOST}
 # OPENAPI url http://206.189.249.190/listings-service/api-specs/ui/?url=http://206.189.249.190/listings-service/openapi&oauth2RedirectUrl=http://206.189.249.190/listings-service/api-specs/ui/oauth2-redirect.html#/
