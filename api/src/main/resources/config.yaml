@@ -5,7 +5,7 @@ kumuluzee:
   version: 1.0.0
   address: 10.245.107.190
   server:
-    base-url: http://10.245.107.190
+    base-url: http://localhost:8080
     address: 10.245.107.190
     http:
       port: 8080
@@ -48,7 +48,6 @@ kumuluzee:
                               </Loggers>
                           </Configuration>'
   config:
-    cluster: rso-cluster
     consul:
       agent: ${CONSUL_HOST}
 # OPENAPI url http://206.189.249.190/listings-service/api-specs/ui/?url=http://206.189.249.190/listings-service/openapi&oauth2RedirectUrl=http://206.189.249.190/listings-service/api-specs/ui/oauth2-redirect.html#/
