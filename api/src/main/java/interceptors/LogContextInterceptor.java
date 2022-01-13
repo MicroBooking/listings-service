@@ -14,7 +14,6 @@ import javax.ws.rs.core.Context;
 import java.util.HashMap;
 import java.util.UUID;
 
-@Log
 @Interceptor
 @Priority(Interceptor.Priority.PLATFORM_BEFORE)
 public class LogContextInterceptor {
