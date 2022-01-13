@@ -76,6 +76,7 @@ public class ListingsServiceApi {
         } else {
             listing = listingsBean.createListing(listing);
         }
+        
 
         return Response.status(Response.Status.OK).entity(listing).build();
     }
